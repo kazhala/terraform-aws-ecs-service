@@ -54,7 +54,7 @@ resource "aws_ecs_task_definition" "this" {
       name = volume.value.name
 
       dynamic "efs_volume_configuration" {
-        for_each = lookup(volume.value, "efs_volume_configuration", null) == null ? [] : volume.value.efs_volume_configuration
+        for_each = lookup(volume.value, "efs_volume_configuration", null) == null ? [] : [volume.value.efs_volume_configuration]
 
         content {
           file_system_id     = efs_volume_configuration.value.file_system_id
