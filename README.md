@@ -46,6 +46,7 @@ No modules.
 | <a name="input_deploy_task_definition"></a> [deploy\_task\_definition](#input\_deploy\_task\_definition) | Deploy ECS task definition. | `bool` | `true` | no |
 | <a name="input_desired_count"></a> [desired\_count](#input\_desired\_count) | Number of task to run. | `number` | `1` | no |
 | <a name="input_ecs_service_token"></a> [ecs\_service\_token](#input\_ecs\_service\_token) | Token for unique name generation. | `string` | `"ecs_service"` | no |
+| <a name="input_health_check"></a> [health\_check](#input\_health\_check) | Health check for the default target group deployed. | `any` | `null` | no |
 | <a name="input_host_port"></a> [host\_port](#input\_host\_port) | Port to receive traffic on the EC2 instance. | `number` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Purpose of the ECS service. | `string` | n/a | yes |
 | <a name="input_protocol"></a> [protocol](#input\_protocol) | Protocol for the ECS service. | `string` | `"HTTP"` | no |

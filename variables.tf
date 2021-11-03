@@ -75,6 +75,12 @@ variable "service_alb_config" {
   default     = []
 }
 
+variable "health_check" {
+  description = "Health check for the default target group deployed."
+  type        = any
+  default     = null
+}
+
 # tfsec:ignore:GEN001
 variable "task_definition_token" {
   description = "Token for unique name generation."

@@ -24,6 +24,22 @@ resource "aws_alb_target_group" "this" {
   vpc_id      = var.vpc_id
   target_type = "instance"
 
+  dynamic "health_check" {
+    for_each = var.health_check == null ? [] : [var.health_check]
+
+    content {
+      enabled             = lookup(health_check.value, "enabled", null)
+      healthy_threshold   = lookup(health_check.value, "healthy_threshold", null)
+      interval            = lookup(health_check.value, "interval", null)
+      matcher             = lookup(health_check.value, "matcher", null)
+      path                = lookup(health_check.value, "path", null)
+      port                = lookup(health_check.value, "port", null)
+      protocol            = lookup(health_check.value, "protocol", null)
+      timeout             = lookup(health_check.value, "timeout", null)
+      unhealthy_threshold = lookup(health_check.value, "timeout", null)
+    }
+  }
+
   tags = merge({ Name = "${var.name}-ecs" }, var.tags)
 
   lifecycle {
