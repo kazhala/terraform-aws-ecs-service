@@ -36,7 +36,7 @@ resource "aws_alb_target_group" "this" {
       port                = lookup(health_check.value, "port", null)
       protocol            = lookup(health_check.value, "protocol", null)
       timeout             = lookup(health_check.value, "timeout", null)
-      unhealthy_threshold = lookup(health_check.value, "timeout", null)
+      unhealthy_threshold = lookup(health_check.value, "unhealthy_threshold", null)
     }
   }
 
