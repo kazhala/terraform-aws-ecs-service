@@ -69,6 +69,12 @@ variable "desired_count" {
   default     = 1
 }
 
+variable "enable_execute_command" {
+  description = "Enable execute command on the ECS service."
+  type        = bool
+  default     = false
+}
+
 variable "service_alb_config" {
   description = "ECS service ALB config."
   type        = any

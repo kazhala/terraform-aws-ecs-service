@@ -101,9 +101,10 @@ resource "aws_ecs_service" "this" {
 
   name = "${var.name}-${random_id.ecs_service.hex}"
 
-  cluster         = var.cluster_id
-  task_definition = var.deploy_task_definition ? aws_ecs_task_definition.this[0].arn : null
-  desired_count   = var.desired_count
+  cluster                = var.cluster_id
+  task_definition        = var.deploy_task_definition ? aws_ecs_task_definition.this[0].arn : null
+  desired_count          = var.desired_count
+  enable_execute_command = var.enable_execute_command
 
   dynamic "load_balancer" {
     for_each = local.service_alb_config
