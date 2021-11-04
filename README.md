@@ -47,6 +47,7 @@ No modules.
 | <a name="input_desired_count"></a> [desired\_count](#input\_desired\_count) | Number of task to run. | `number` | `1` | no |
 | <a name="input_ecs_service_token"></a> [ecs\_service\_token](#input\_ecs\_service\_token) | Token for unique name generation. | `string` | `"ecs_service"` | no |
 | <a name="input_enable_execute_command"></a> [enable\_execute\_command](#input\_enable\_execute\_command) | Enable execute command on the ECS service. | `bool` | `false` | no |
+| <a name="input_execution_role_arn"></a> [execution\_role\_arn](#input\_execution\_role\_arn) | ARN of the task execution role that the ECS container agent and DOcker daemon can assume. | `string` | `null` | no |
 | <a name="input_health_check"></a> [health\_check](#input\_health\_check) | Health check for the default target group deployed. | `any` | `null` | no |
 | <a name="input_host_port"></a> [host\_port](#input\_host\_port) | Port to receive traffic on the EC2 instance. | `number` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Purpose of the ECS service. | `string` | n/a | yes |
@@ -55,6 +56,7 @@ No modules.
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags to apply to applicable resources. | `map(string)` | `{}` | no |
 | <a name="input_target_group_token"></a> [target\_group\_token](#input\_target\_group\_token) | Token for unique name generation. | `string` | `"target_group"` | no |
 | <a name="input_task_definition_token"></a> [task\_definition\_token](#input\_task\_definition\_token) | Token for unique name generation. | `string` | `"task_definition"` | no |
+| <a name="input_task_role_arn"></a> [task\_role\_arn](#input\_task\_role\_arn) | ARN of IAM role that allows your Amazon ECS container task to make calls to other AWS services. | `string` | `null` | no |
 | <a name="input_volumes"></a> [volumes](#input\_volumes) | List of volume configuration | `any` | `[]` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | VPC to deploy the service. | `string` | n/a | yes |
 

@@ -75,6 +75,18 @@ variable "enable_execute_command" {
   default     = false
 }
 
+variable "execution_role_arn" {
+  description = "ARN of the task execution role that the ECS container agent and DOcker daemon can assume."
+  type        = string
+  default     = null
+}
+
+variable "task_role_arn" {
+  description = "ARN of IAM role that allows your Amazon ECS container task to make calls to other AWS services."
+  type        = string
+  default     = null
+}
+
 variable "service_alb_config" {
   description = "ECS service ALB config."
   type        = any

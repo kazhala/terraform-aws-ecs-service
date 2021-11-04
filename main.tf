@@ -58,8 +58,10 @@ resource "random_id" "ecs_task_definition" {
 resource "aws_ecs_task_definition" "this" {
   count = var.deploy_task_definition ? 1 : 0
 
-  family       = "${var.name}-${random_id.ecs_task_definition.hex}"
-  network_mode = "bridge"
+  family             = "${var.name}-${random_id.ecs_task_definition.hex}"
+  network_mode       = "bridge"
+  execution_role_arn = var.execution_role_arn
+  task_role_arn      = var.task_role_arn
 
   container_definitions = jsonencode(var.container_definitions)
 
